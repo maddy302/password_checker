@@ -22,7 +22,7 @@ Verify your hash if present with greatest occurances in response.
 
 Run
 ---
-python pwned.py <your password>
+python pwned.py your_password
 ```
 python pwned.py nopassword
 Entire hash of nopassword is D186E8DAC48A24D0115B568D0AB2C9E8B82E6ADB
