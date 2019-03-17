@@ -27,5 +27,5 @@ python pwned.py your_password
 python pwned.py nopassword
 Entire hash of nopassword is D186E8DAC48A24D0115B568D0AB2C9E8B82E6ADB
 passing D186E to the API
-Your password was found as D186E8DAC48A24D0115B568D0AB2C9E8B82E6ADB in 21421 occurances
+Your password was found as D186E8DAC48A24D0115B568D0AB2C9E8B82E6ADB in 21421 occurences
 ```
