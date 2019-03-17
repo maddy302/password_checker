@@ -6,7 +6,7 @@ Description
 ===========
 It takes your password, performs a sha1 hash, sends to the haveibeenpwned api the first 5 characters of the hash.
 
-The API then returns all possible combinations of hashes with them, and if you find you hash with many occurances, then its time to change your password.
+The API then returns all possible combinations of hashes with them, and if you find you hash with many occurences, then its time to change your password.
 
 ```
 Password - nopassword
