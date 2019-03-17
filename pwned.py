@@ -2,6 +2,11 @@ import sys
 import hashlib
 import requests
 
+'''
+Source - https://haveibeenpwned.com/
+@Madhukar
+'''
+
 class Pwned:
     api_key = ''
     req_url = 'https://api.pwnedpasswords.com/range/'
