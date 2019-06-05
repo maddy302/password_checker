@@ -1,7 +1,7 @@
 import sys
 import hashlib
 import requests
-
+import getpass
 '''
 Source - https://haveibeenpwned.com/
 @Madhukar
@@ -15,9 +15,9 @@ class Pwned:
         pwd = args[0]
     
     def hashpwdSha1(self, pwd):
-        md5h = hashlib.sha1(pwd.encode('utf-8')).hexdigest().upper()
-        print('Entire hash of {} is {}'.format(pwd, md5h))
-        return md5h
+        sha1 = hashlib.sha1(pwd.encode('utf-8')).hexdigest().upper()
+        print('Entire hash of your password is {}'.format(sha1))
+        return sha1
 
     def queryAPI(self,partialHash):
         res = requests.get(self.req_url+partialHash)
@@ -27,8 +27,8 @@ class Pwned:
 
 
 def main(args):
-    obj =  Pwned(args[0])
-    pHash = obj.hashpwdSha1(args[0])
+    obj =  Pwned(args)
+    pHash = obj.hashpwdSha1(args)
     head = pHash[:5]
     print('passing {} to the API'.format(head))
     res = obj.queryAPI(head)
@@ -42,5 +42,13 @@ def main(args):
         print('good it wasn\'t found')
 
 if __name__ == '__main__':
-    inp = sys.argv[1:]
-    main(inp)
+    #inp = sys.argv[1:]
+    try:
+        print('Enter your password')
+        pwd = getpass.getpass()
+    except Exception as error:
+        print('ERROR', error)
+    else:
+        main(pwd)
+
+    
